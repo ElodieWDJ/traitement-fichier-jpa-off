@@ -36,4 +36,65 @@ public class Produit {
 	public Produit() {
 		
 	}
+
+	@Override
+	public String toString() {
+		return "Produit [id=" + id + ", nom=" + nom + ", categorie=" + categorie + ", marque=" + marque + "]";
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the nom
+	 */
+	public String getNom() {
+		return nom;
+	}
+
+	/**
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	/**
+	 * @return the categorie
+	 */
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	/**
+	 * @param categorie the categorie to set
+	 */
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+
+	/**
+	 * @return the marque
+	 */
+	public Marque getMarque() {
+		return marque;
+	}
+
+	/**
+	 * @param marque the marque to set
+	 */
+	public void setMarque(Marque marque) {
+		this.marque = marque;
+	}
 }
