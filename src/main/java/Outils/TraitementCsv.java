@@ -72,11 +72,10 @@ public class TraitementCsv {
 	 * @param lignes
 	 * @return setMarque
 	 */
-	public static Set<Marque> setMarque = new HashSet<Marque>();
-	{
+	public static Set<Marque> ajouterMarque(List<String> lignes) {
 		Set<Marque> setMarque = new HashSet<Marque>();
 
-		for (String ligne: lignes) {
+		for (String ligne : lignes) {
 			String[] morceaux = ligne.split("\\t", -1);
 
 			String nomMarque = morceaux[1];
@@ -84,33 +83,34 @@ public class TraitementCsv {
 			marq.setNom(nomMarque);
 			setMarque.add(marq);
 		}
+		return setMarque;
 	}
-	
+
 	/**
 	 * Création liste Produit
 	 * 
 	 * @param lignes
 	 * @return setProduit
 	 */
-	
-	public static Set<Produit> ajouterProduit (List<String> lignes){
+
+	public static Set<Produit> ajouterProduit(List<String> lignes) {
 		Set<Produit> setProduit = new HashSet<Produit>();
-		
-		for(String ligne: lignes) {
+
+		for (String ligne : lignes) {
 			String[] morceaux = ligne.split("\\t", -1);
-			
+
 			String nomCategorie = morceaux[0];
 			Categorie categorie = new Categorie();
 			categorie.setNom(nomCategorie);
-			
+
 			String nomMarque = morceaux[1];
 			Marque marque = new Marque();
 			marque.setNom(nomMarque);
-			
+
 			String nomProduit = morceaux[2];
 			Produit produit = new Produit();
 			produit.setNom(nomProduit);
-			
+
 			String scoreNutritionnel = morceaux[3];
 			String ingredientsList = morceaux[4];
 			Double energie100g = Double.parseDouble(morceaux[5]);
@@ -138,8 +138,7 @@ public class TraitementCsv {
 			Double presenceHuilePalme = Double.parseDouble(morceaux[27]);
 			String allergenesList = morceaux[28];
 			String additifsList = morceaux[29];
-			
-			
+
 		}
 	}
 }
