@@ -36,6 +36,10 @@ public class Marque {
 
 	}
 
+	public Marque() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toString() {
 		return "Marque [id=" + id + ", nom=" + nom + ", produits=" + produits + "]";

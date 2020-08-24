@@ -20,11 +20,14 @@ import javax.persistence.Table;
 public class Produit {
 	@Id
 	private int id;
+	
 	@Column(name = "nom", nullable = false, length = 255)
 	private String nom;
+	
 	@ManyToOne
 	@JoinColumn(name = "categorie_id")
 	private Categorie categorie;
+	
 	@ManyToOne
 	@JoinColumn(name = "id_marque")
 	private Marque marque;
