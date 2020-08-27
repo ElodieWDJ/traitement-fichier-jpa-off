@@ -1,6 +1,3 @@
-/**
- * 
- */
 package entities;
 
 import javax.persistence.Column;

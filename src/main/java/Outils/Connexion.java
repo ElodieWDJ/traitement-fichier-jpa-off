@@ -3,6 +3,8 @@
  */
 package Outils;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -26,6 +28,11 @@ public class Connexion {
 	public void closeConnexion() {
 		em.close();
 		factory.close();
+	}
+
+	public static void insertion(List<String> produits, EntityManagerFactory factory2) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

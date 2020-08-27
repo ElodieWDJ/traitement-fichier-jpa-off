@@ -8,7 +8,9 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -16,36 +18,29 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "marque")
+@Table(name = "ingredient")
 
-public class Marque {
+public class Ingredient {
 	@Id
 	private int id;
 	
-	@Column(name = "nom", nullable = false, length = 50)
+	@Column(name = "nom", nullable = false, length = 255)
 	private String nom;
 	
-	@OneToMany(mappedBy = "marque")
-	private Set<Produit> produits;
-
-	/**
-	 * 
-	 * @param morceaux 
-	 */
+	@ManyToMany
+	@JoinTable(name="compo",
+			joinColumns = @JoinColumn(name="id_ingr",referencedColumnName="id"),
+	        inverseJoinColumns=@JoinColumn(name="id_produit", referencedColumnName="id")
+	   )
+	   private Set<Produit> produits;
 	
-
-	public Marque() {
+	public Ingredient() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Marque(String nomMarque) {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public String toString() {
-		return "Marque [id=" + id + ", nom=" + nom + ", produits=" + produits + "]";
+		return "Ingredient [id=" + id + ", nom=" + nom + ", produits=" + produits + "]";
 	}
 
 	/**
@@ -89,4 +84,5 @@ public class Marque {
 	public void setProduits(Set<Produit> produits) {
 		this.produits = produits;
 	}
+
 }
